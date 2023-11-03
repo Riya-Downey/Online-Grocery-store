@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grocery Bill</title>
+  <script>
+    function calculateTotal() {
+      var item1Quantity = document.forms["groceryForm"]["quantity1"].value;
+      var item1Price = document.forms["groceryForm"]["price1"].value;
+      var item2Quantity = document.forms["groceryForm"]["quantity2"].value;
+      var item2Price = document.forms["groceryForm"]["price2"].value;
+      var item3Quantity = document.forms["groceryForm"]["quantity3"].value;
+      var item3Price = document.forms["groceryForm"]["price3"].value;
+      var item4Quantity = document.forms["groceryForm"]["quantity4"].value;
+      var item4Price = document.forms["groceryForm"]["price4"].value;
+      var item5Quantity = document.forms["groceryForm"]["quantity1"].value;
+      var item5Price = document.forms["groceryForm"]["price1"].value;
+      var item6Quantity = document.forms["groceryForm"]["quantity2"].value;
+      var item6Price = document.forms["groceryForm"]["price2"].value;
+      
+      var total = (item1Quantity * item1Price) + (item2Quantity * item2Price) + 
+                       (item3Quantity * item3Price) + (item4Quantity * item4Price) +
+                       (item5Quantity * item5Price) + (item6Quantity * item6Price);
+     
+      
+      document.forms["groceryForm"]["total"].value = total;
+    }
+  </script>
+</head>
+<body>
+  <h1>Grocery Bill</h1>
+  <form name="groceryForm">
+    <table>
+      <tr>
+        <td>Item</td>
+        <td>Quantity</td>
+        <td>Price</td>
+      </tr>
+      <tr>
+        <td><input type="text" name="item1"></td>
+        <td><input type="number" name="quantity1"></td>
+        <td><input type="number" name="price1"></td>
+      </tr>
+      <tr>
+        <td><input type="text" name="item2"></td>
+        <td><input type="number" name="quantity2"></td>
+        <td><input type="number" name="price2"></td>
+      </tr>
+      <!-- Add more rows for additional items as needed -->
+    </table>
+    <br><br>
+    Total: <input type="text" name="total" disabled>
+    <br><br>
+    <input type="button" value="Calculate Total" onclick="calculateTotal()">
+  </form>
+</body>
+</html>
+
+
